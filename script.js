@@ -2090,8 +2090,167 @@
 
 // Sum the result.
 
-let arr = [1, 2, 3, 4, 5, 6]
-  .filter((num) => num % 2 === 0)
-  .map((num) => num * 2)
-  .reduce((acc, val) => acc + val, 0);
-console.log(arr);
+// let arr = [1, 2, 3, 4, 5, 6]
+//   .filter((num) => num % 2 === 0)
+//   .map((num) => num * 2)
+//   .reduce((acc, val) => acc + val, 0);
+// console.log(arr);
+
+// <--------------OBJECTS------------------>
+// Object is a non-primitive data type in JavaScript that stores data in the form of key-value pairs.
+// Key (also called property name) → always string or symbol type hota hai.
+// Value → kuch bhi ho sakta hai (string, number, boolean, array, object, function, etc.).
+
+//  BASIC understanding in object
+//  let obj ={
+//   name:"Arsh",
+//   age:21,
+//   favoriteFood:"Biryani",
+
+//  };
+
+//  let aa = "name";
+//  obj[aa]
+
+// deep object
+
+// const user = {
+//   name: "Arsh",
+//   address: {
+//     city: "Lucknow",
+//     pin: 226002,
+//     location: {
+//       latitude: 23.2,
+//       longitude: 77,
+//     },
+//   },
+// };
+
+
+// user.address.location.longitude
+
+//OR
+
+// let { latitude, longitude } = user.address.location;
+
+
+
+
+
+
+// <-----------For...in-------->
+// let obj = {
+//   name:"Arshullah",
+//   age:21,
+//   eamil:"ullharshullah@gmail.com"
+// };
+
+// for(let key in obj ){
+// console.log(key);   //yaha sirkey dekhaye dege o/p me means name , age ,email
+
+// Agar hame key ke sath sath value bhi dekhne hai tab obj ke sath square bracket lagate hai
+// console.log(key,":" ,  obj[key]);
+
+// }
+
+
+
+// <-------------Objects.keys------------>
+// jabhb hame array return krwana ho keys k tab tab ham Object.keys() use krege
+// let person = {
+//   name: "Arshullah",
+//   age: 21,
+//   eamil: "ullharshullah@gmail.com",
+// };
+
+
+// console.log(Object.keys(person));
+
+
+
+
+
+// <----------Object.entries------->
+
+// let Personal = {
+//   name: "Arshullah",
+//   age: 21,
+//   eamil: "ullharshullah@gmail.com",
+// };
+
+// console.log(Object.entries(Personal));
+
+
+//<-----------------ObjectCopying:Spread, Object.assign, deep clone  ---------->
+
+// let Obj1 = {
+//   name: "Arshullah",
+//   age: 21,
+//   eamil: "ullharshullah@gmail.com",
+//}; 
+  //let obj2={...Obj1}    // Spread operator
+// let obj3 = Object.assign({},Obj1);
+// console.log(obj3);
+
+
+
+
+//   FOR nested object : Copying method  Deep Clone
+//  it make deep copy obj include nested obj and you can change clone did not effect in original obj 
+
+
+// let obj1 = {
+//   name: "Arshullah",
+//   age: 21,
+//   eamil: "ullharshullah@gmail.com",
+//   address:{
+//     city:"Lucknow",
+//   },
+// };
+
+// let obj2 = JSON.parse(JSON.stringify(obj1));
+
+// obj2.address.city = "maudaha";
+// console.log(obj2);
+// console.log(obj1);
+
+
+
+
+
+
+
+// <------------------Optional chaining------------>
+
+// let obj1 = {
+//   name: "Arshullah",
+//   age: 21,
+//   eamil: "ullharshullah@gmail.com",
+//   address: {
+//     city: "Lucknow",
+//   },
+// };
+
+// console.log(obj1.address.city);
+// console.log(obj1?.address?.district);
+
+
+
+
+
+
+// <-------------------Computed Properties-------------->
+
+// let role = "Admin";
+
+// let obj1 = {
+//   name: "Arshullah",
+//   age: 21,
+//   eamil: "ullharshullah@gmail.com",
+//   address: {
+//     city: "Lucknow",
+//   },
+//   [role]:" ARshullah Bhaijaan"
+// };
+// console.log(obj1);
+
