@@ -2126,17 +2126,11 @@
 //   },
 // };
 
-
 // user.address.location.longitude
 
 //OR
 
 // let { latitude, longitude } = user.address.location;
-
-
-
-
-
 
 // <-----------For...in-------->
 // let obj = {
@@ -2153,8 +2147,6 @@
 
 // }
 
-
-
 // <-------------Objects.keys------------>
 // jabhb hame array return krwana ho keys k tab tab ham Object.keys() use krege
 // let person = {
@@ -2163,12 +2155,7 @@
 //   eamil: "ullharshullah@gmail.com",
 // };
 
-
 // console.log(Object.keys(person));
-
-
-
-
 
 // <----------Object.entries------->
 
@@ -2180,24 +2167,19 @@
 
 // console.log(Object.entries(Personal));
 
-
 //<-----------------ObjectCopying:Spread, Object.assign, deep clone  ---------->
 
 // let Obj1 = {
 //   name: "Arshullah",
 //   age: 21,
 //   eamil: "ullharshullah@gmail.com",
-//}; 
-  //let obj2={...Obj1}    // Spread operator
+//};
+//let obj2={...Obj1}    // Spread operator
 // let obj3 = Object.assign({},Obj1);
 // console.log(obj3);
 
-
-
-
 //   FOR nested object : Copying method  Deep Clone
-//  it make deep copy obj include nested obj and you can change clone did not effect in original obj 
-
+//  it make deep copy obj include nested obj and you can change clone did not effect in original obj
 
 // let obj1 = {
 //   name: "Arshullah",
@@ -2214,12 +2196,6 @@
 // console.log(obj2);
 // console.log(obj1);
 
-
-
-
-
-
-
 // <------------------Optional chaining------------>
 
 // let obj1 = {
@@ -2233,11 +2209,6 @@
 
 // console.log(obj1.address.city);
 // console.log(obj1?.address?.district);
-
-
-
-
-
 
 // <-------------------Computed Properties-------------->
 
@@ -2253,4 +2224,161 @@
 //   [role]:" ARshullah Bhaijaan"
 // };
 // console.log(obj1);
+
+
+
+
+//<-----------------Practice Question--------------->
+
+// Q1. Create an object for a student with name ,age and isEnrolled.
+
+// let studentDetail = {
+//     name:"Arsh",
+//     Age:21,
+//     isEnrolled: true
+// }
+
+
+
+// Q2. Can an object key be a number or boolean.
+//   yes  it is possible
+
+// let news ={
+//     true:"Arshullah",
+//     21:"boss"
+// }
+// console.log(news[21]);
+
+
+// Q3.Access the value of "first-name"from this object.
+
+// let user ={
+//     "First-name":"Arsh",
+// };
+// console.log(user["First-name"]);
+
+
+
+// Q4. Give a dynamic key let key ="age", how will you access user[key]?/
+
+// let key = "age";
+
+// const user ={
+//     age : "26"
+// }
+// console.log(user[key]);
+
+
+// Q5. From the object below , pint the latitude:
+// let locations = {
+//   city: "Lucknow",
+//   coordinates: {
+//     lat: 23.2,
+//     lng: 77.4,
+//   }
+// };
+// console.log(locations.coordinates.lat);
+
+
+// Q6. Desturcture the city and lat from the location object above.
+
+// let locations = {
+//   city: "Lucknow",
+//   coordinates: {
+//     lat: 23.2,
+//     lng: 77.4,
+//   },
+// };
+
+// let { city } = location;
+// let { lat } = location.coordinates;
+
+
+
+// Q7. Desturcture the key "First-name"as a variable called firstName.
+
+// const user = {
+//     "first-nmae":"Arsh",
+
+// };
+
+// let {"first-name": firstName} = user;
+
+
+// Q8. user for..in loop to log all key in object this object:
+// const course ={
+//     title:"javaScript",
+//     duration:"4 week"
+// };
+
+// for(let key in course){
+//     console.log(key);
+    
+// }
+
+
+// Q9. Use Object.entries() to print all key-value pairs as:
+
+// let locations = {
+//   city: "Lucknow",
+//   Local:"Hussainganj",
+//   };
+
+
+// Object.entries(locations).forEach((val)=>{
+//     console.log(val[0]+ ":"+val[1] );
+    
+// })
+
+
+// Q10. copy this object using sprit Operator
+
+// let nums ={a:1,b:2}
+// let copy ={...nums}
+
+
+// Q11. what is  problem with this.
+
+// const obj1 = {
+//     info:{
+//         score:80
+//     }
+// }
+
+// const clone = {...obj1}
+// clone.info.score= 100;
+// console.log(obj1.info.score);
+
+
+// Q12. deep clone the obj1 safely
+
+// const obj1 = {
+//   info: {
+//     score: 80,
+//   },
+// };
+
+// let nemu = JSON.parse(JSON.stringify(obj1))
+// nemu.info.score = 100;
+// console.log(nemu);
+// console.log(obj1);
+
+
+// Q13. rewrite the safely using optional chaning :
+
+// const person ={}
+// console.log(person?.profile?.name);
+
+
+// Q14. use the variable dynamic assign the properties:
+
+const dynamicRole = "Role"; 
+let obje ={
+name:"Arsh",
+[dynamicRole]:"Admin",
+}
+
+console.log(obje);
+
+
 
