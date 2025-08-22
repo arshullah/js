@@ -2225,9 +2225,6 @@
 // };
 // console.log(obj1);
 
-
-
-
 //<-----------------Practice Question--------------->
 
 // Q1. Create an object for a student with name ,age and isEnrolled.
@@ -2238,8 +2235,6 @@
 //     isEnrolled: true
 // }
 
-
-
 // Q2. Can an object key be a number or boolean.
 //   yes  it is possible
 
@@ -2249,15 +2244,12 @@
 // }
 // console.log(news[21]);
 
-
 // Q3.Access the value of "first-name"from this object.
 
 // let user ={
 //     "First-name":"Arsh",
 // };
 // console.log(user["First-name"]);
-
-
 
 // Q4. Give a dynamic key let key ="age", how will you access user[key]?/
 
@@ -2268,7 +2260,6 @@
 // }
 // console.log(user[key]);
 
-
 // Q5. From the object below , pint the latitude:
 // let locations = {
 //   city: "Lucknow",
@@ -2278,7 +2269,6 @@
 //   }
 // };
 // console.log(locations.coordinates.lat);
-
 
 // Q6. Desturcture the city and lat from the location object above.
 
@@ -2291,9 +2281,9 @@
 // };
 
 // let { city } = location;
-// let { lat } = location.coordinates;
+// let { lat } = locations.coordinates;
 
-
+// console.log(locations);
 
 // Q7. Desturcture the key "First-name"as a variable called firstName.
 
@@ -2304,7 +2294,6 @@
 
 // let {"first-name": firstName} = user;
 
-
 // Q8. user for..in loop to log all key in object this object:
 // const course ={
 //     title:"javaScript",
@@ -2313,9 +2302,8 @@
 
 // for(let key in course){
 //     console.log(key);
-    
-// }
 
+// }
 
 // Q9. Use Object.entries() to print all key-value pairs as:
 
@@ -2324,18 +2312,15 @@
 //   Local:"Hussainganj",
 //   };
 
-
 // Object.entries(locations).forEach((val)=>{
 //     console.log(val[0]+ ":"+val[1] );
-    
-// })
 
+// })
 
 // Q10. copy this object using sprit Operator
 
 // let nums ={a:1,b:2}
 // let copy ={...nums}
-
 
 // Q11. what is  problem with this.
 
@@ -2348,7 +2333,6 @@
 // const clone = {...obj1}
 // clone.info.score= 100;
 // console.log(obj1.info.score);
-
 
 // Q12. deep clone the obj1 safely
 
@@ -2363,22 +2347,153 @@
 // console.log(nemu);
 // console.log(obj1);
 
-
 // Q13. rewrite the safely using optional chaning :
 
 // const person ={}
 // console.log(person?.profile?.name);
 
-
 // Q14. use the variable dynamic assign the properties:
 
-const dynamicRole = "Role"; 
-let obje ={
-name:"Arsh",
-[dynamicRole]:"Admin",
-}
+// const dynamicRole = "Role";
+// let obje ={
+// name:"Arsh",
+// [dynamicRole]:"Admin",
+// }
 
-console.log(obje);
+// console.log(obje);
+
+// <----------------New Object Question-------------->
+// Q15.Create an object representing a student with properties: name, age, and grade. Print the object.
+
+// const student ={
+//     name:"Arshullah",
+//     age:21,
+//     grade:"A"
+// }
+// console.log(student);
+
+// Q16. Access object properties using dot notation and bracket notation.
+// const student = {
+//   name: "Arshullah",
+//   age: 21,
+//   grade: "A",
+//   locations:"Maudaha"
+// };
+
+// console.log(student.name, student.age);
+// console.log(student["locations"], student["grade"]);
+
+// Q17. Add a new property to an existing object and delete a property.
+// let student = {
+//   name: "Arshullah",
+//   age: 21,
+//   grade: "A",
+//   locations: "Maudaha",
+// };
+
+// student.School = "V.M.H.S Rahmaniya Inter college";
+// student["quality"]= "Quick Learner"
+
+// delete student.grade;
+// Agar multiple properties add krno ho to Object.assign ka use krte hai.
+// console.log(student);
+
+// Q18.Create a nested object (object inside another object) and access inner values.
+// let student = {
+//   name: "Arshullah",
+//   age: 21,
+//   grade: "A",
+//   locations: "Maudaha",
+//   family: {
+//     father: "Rahmat Ullah",
+//     mother: "Shamim Bano",
+
+//     brother: {
+//       younger1: "Arshan",
+//       Younger2: "Umar ullah",
+//     },
+//   },
+// };
+
+// console.log(student["family"]["brother"]["Younger2"]);
+
+// 2nd method
+// console.log(student.family.brother.Younger2);
+
+// Q19. Write a function that takes an object and prints all its keys and values using a loop.
+
+// 1) Function banaya jise hamne parameter Object diya hai.
+// let printObject = (studentObject) => {
+//   //2) Type check kia obj valid hai hi
+//   if (studentObject === null || typeof studentObject !== "object") {
+//     console.log("savdhan");
+//     return;
+//   }
+//   // 3)loop logao all keys ke liye
+//   for (let key in studentObject) {
+//     if (Object.prototype.hasOwnProperty.call(studentObject, key)) {
+//       let value = studentObject[key];
+//       console.log(`key: ${key}, value: ${value}`);
+//     }
+//   }
+// };
+// Example chk
+// const student = {
+//   name: "Arshullah",
+//   age: 21,
+//   grade: "A",
+//   locations: "Maudaha",
+// };
+
+// printObject(student)
+
+//Q20.Merge two objects using the spread operator and Object.assign().
+
+// let obj1 = {
+//   name: "Arshullah",
+//   age: 21,
+//   city: "Maudaha",
+// };
+
+// let obj2 = {
+//   grade: "A",
+//   course: "B.Tech",
+//   college: "Azad Institute",
+// };
+
+// let obj3 = {...obj1,...obj2}
+
+// let obj4 = Object.assign({},obj1,obj2)
+// console.log(obj4);
+// console.log(obj3);
+
+
+// Q21.Explain the difference between shallow copy and deep copy of objects with an example.
+
+// let student = {
+//   name: "Arshullah",
+//   age: 21,
+//   address: {
+//     city: "Maudaha",
+//     state: "UP",
+//   },
+// };
+
+// let shallowCopy = {...student};
+// shallowCopy.name = "umar";
+// shallowCopy.address.city="lucknow"
+// console.log(student.address.city);
+// console.log(student.name);
+
+
+
+//  Deep copy
+
+// let deepCopy = JSON.parse(JSON.stringify(student))
+
+// deepCopy.address.city = "Lucknow"; 
+// console.log(student.address.city);
+
 
 
 
