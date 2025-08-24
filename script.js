@@ -2467,7 +2467,6 @@
 // console.log(obj4);
 // console.log(obj3);
 
-
 // Q21.Explain the difference between shallow copy and deep copy of objects with an example.
 
 // let student = {
@@ -2485,15 +2484,168 @@
 // console.log(student.address.city);
 // console.log(student.name);
 
-
-
 //  Deep copy
 
 // let deepCopy = JSON.parse(JSON.stringify(student))
 
-// deepCopy.address.city = "Lucknow"; 
+// deepCopy.address.city = "Lucknow";
 // console.log(student.address.city);
 
+// Q22. Create a nested object and access inner properties safely using optional chaining.
+
+// let details = {
+//   name: "Arshullah",
+//   age: 21,
+//   gender: "male",
+//   address: {
+//     state: "UttarPradesh",
+//     locatlity: {
+//       district: "Hamirpur",
+//       town: "maudaha",
+//       mohallah: "hussainganj",
+//     },
+//   },
+// };
+
+// let mohallahName = details.address?.locatlity?.mohallah
+// if (mohallahName) {
+//     console.log("Mohalla found :", mohallahName);
+    
+// } else{
+//     console.log("mohallah is  not available");
+    
+// }
+
+
+// Q23.Use computed properties to dynamically create keys in an object.
+
+
+// let keyName1 = "name";
+// let keyName2 = "Age";
+// let keyName3 = "course";
+// let keyName4 = "Email";
+
+// let studentDetail={
+//     [keyName1] : "Arshullah",
+//     [keyName2] : "21",
+//     [keyName3] : "Btech",
+//     [keyName4] : "ullaharshullah@gmail.com"
+// }
+// console.log(studentDetail);
+
+
+// Q24. Clone an object deeply using the JSON method.
+
+// let details = {
+//   name: "Arshullah",
+//   age: 21,
+//   gender: "male",
+//   address: {
+//     state: "UttarPradesh",
+//     locatlity: {
+//       district: "Hamirpur",
+//       town: "maudaha",
+//       mohallah: "hussainganj",
+//     },
+//   },
+// };
+
+// let clone = JSON.parse(JSON.stringify(details));
+
+//  clone.name=  "Arshanullah";
+//  details.gender = "custom";
+//  console.log(clone);
+//  console.log(details);
+ 
+//  Q25. this use
+
+// let human  = {
+//     name : "Arshullah",
+//     age:21,
+//     greet : function(){
+//         console.log("my name :" + human.name+ " and my age:"+ human.age);
+        
+//     }
+// };
+
+// human.greet()
+
+
+// <------------------------------------------OR---------------------------------------->
+// For understnding
+// let human = {
+//   name: "Arshullah",
+//   age: 21,
+//   greet: function () {
+//     console.log("my name :" + this.name + " and my age:" + this.age);
+//   },
+// };
+
+// let another = human; // another bhi same object ko point kar raha hai
+// human = null; // ab human variable null ho gaya
+
+// another.greet(); 
 
 
 
+//Output:  my name :Arshullah and my age:21
+
+
+
+// <-----------------------------or------------------------->
+// let human = {
+//   name: "Arshullah",
+//   age: 21,
+//   greet: function () {
+//     console.log("my name :" + human.name + " and my age:" + human.age);
+//   },
+// };
+
+// let another = human;
+// human = null;
+
+// another.greet(); 
+
+
+// output: TypeError: Cannot read properties of null (reading 'name')
+
+
+//Q26. Check if a property exists in an object using in operator..
+
+// let obj = {
+//     check:"yes",
+//     net:"no",
+//     good:"better"
+// }
+// console.log("print" in obj);
+// console.log("check" in obj);
+
+
+
+// Q27.get all ket uses object.key()
+// let obj2 = {
+//   grade: "A",
+//   course: "B.Tech",
+//   college: "Azad Institute",
+// };
+// let all = Object.keys(obj2);
+// console.log(all);
+
+// Q29.get all ket uses object.value
+// let obj2 = {
+//   grade: "A",
+//   course: "B.Tech",
+//   college: "Azad Institute",
+// };
+// let all = Object.values(obj2);
+// console.log(all);
+
+
+// Q30.get all ket uses object.enteries
+let obj2 = {
+  grade: "A",
+  course: "B.Tech",
+  college: "Azad Institute",
+};
+let all = Object.entries(obj2);
+console.log(all);
